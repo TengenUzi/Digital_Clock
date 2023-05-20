@@ -25,16 +25,16 @@ function currentTime() {
     mm = (mm < 10) ? "0" + mm : mm;
     ss = (ss < 10) ? "0" + ss : ss;
 
-    // let time = hh + ":" + mm + ":" + ss + " " + session;
     let time = `
     <div>
-        <div>${hh}:${mm}:${ss} ${session}</div>
-        <div>${today} | ${month} | ${year}</div>
+        <div class="time">${hh}:${mm}:${ss} ${session}</div>
+        <div class="date">${today} | ${month} | ${year}</div>
         <div class="day">${day}</div>
     </div>
     `
 
     document.getElementById("clock").innerHTML = time;
+    document.getElementById("wrapper").style.background = `#${hh}${mm}${ss}`;
 
     setTimeout(currentTime, 1000);
 
